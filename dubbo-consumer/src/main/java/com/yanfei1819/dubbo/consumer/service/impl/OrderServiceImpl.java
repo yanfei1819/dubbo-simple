@@ -1,6 +1,8 @@
 package com.yanfei1819.dubbo.consumer.service.impl;
 
-import com.yanfei1819.dubbo.consumer.service.OrderService;
+import com.yanfei1819.dubbo.api.service.OrderService;
+import com.yanfei1819.dubbo.api.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,8 +10,16 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OrderServiceImpl implements OrderService {
+
+    @Autowired
+    private UserService service;
+
     @Override
-    public String getMsg(String input) {
-        return null;
+    public String getMsg(String name) {
+
+        String msg = service.sayHello(name);
+
+        System.out.println(msg);
+        return msg;
     }
 }

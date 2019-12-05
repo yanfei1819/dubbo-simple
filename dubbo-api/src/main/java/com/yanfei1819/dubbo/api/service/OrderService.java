@@ -1,4 +1,4 @@
-package com.yanfei1819.dubbo.consumer.service;
+package com.yanfei1819.dubbo.api.service;
 
 
 /**
