@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- 1.当前应用的名字 -->
+    <dubbo:application name="hello-world-app"  />
+
+    <!-- 2.指定注册中心的地址。使用multicast广播注册中心暴露服务地址 -->
+    <!-- <dubbo:registry address="zookeeper://127.0.0.1:2181" />-->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
+
+    <!-- 3.指定通信规则。用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <!-- 4.声明需要暴露的服务接口 ,ref:指向服务的真正实现对象-->
+    <dubbo:service interface="com.yanfei1819.dubbo.api.service.UserService" ref="userService" />
+
+    <!-- 5.服务实现。和本地bean一样实现服务 -->
+    <bean id="userService" class="com.yanfei1819.dubbo.springboot.provider.service.impl.UserServiceImpl" />
+</beans>

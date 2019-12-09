@@ -13,11 +13,11 @@ public class DubboConsumerApplication {
     public static void main(String[] args) throws IOException {
 //        SpringApplication.run(DubboConsumerApplication.class, args);
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("consumer.xml");
-
-        OrderService orderService = context.getBean(OrderService.class);
-        String name = orderService.getMsg("dubbo");
-
-        System.out.println(name);
+//
+//        OrderService orderService = context.getBean(OrderService.class);
+//        String name = orderService.getMsg("dubbo");
+//
+//        System.out.println(name);
         context.start();
         System.in.read(); // 按任意键退出
     }

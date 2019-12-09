@@ -17,7 +17,7 @@
     <dubbo:application name="consumer-of-helloworld-app"  />
 
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
-    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" check="false"/>
 
     <dubbo:reference interface="com.yanfei1819.dubbo.api.service.UserService" id="userService"/>
 
