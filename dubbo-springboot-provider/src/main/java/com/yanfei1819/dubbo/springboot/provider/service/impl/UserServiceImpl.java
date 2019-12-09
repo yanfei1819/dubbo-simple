@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
  *
  * Created by 追梦1819 on 2019-12-04.
  */
+@org.apache.dubbo.config.annotation.Service // 暴露服务
 @Service
 public class UserServiceImpl implements UserService {
 
