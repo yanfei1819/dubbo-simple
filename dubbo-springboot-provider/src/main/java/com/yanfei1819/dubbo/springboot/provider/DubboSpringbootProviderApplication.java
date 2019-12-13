@@ -3,14 +3,16 @@ package com.yanfei1819.dubbo.springboot.provider;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
-
 
 /**
  * SpringBoot与Dubbo整合的三种方式：
  *
- * 1.引入dubbo启动器，以在application.properties文件中配置dubbo.xml的的信息，
- * 然后通过@Service 暴露服务，和 @Reference 发现服务，并通过@DubboEnable开启注解功能；
+ * 1.使用springboot
+ *      1） 引入dubbo启动器，
+ *      2） 以在application.properties文件中配置dubbo.xml的的信息，
+ *      3） 然后通过@Service 暴露服务，
+ *      4） @Reference 发现服务，
+ *      5） 并通过@DubboEnable开启注解功能；
  *
  * 2.保留dubbo.xml文件。
  *      1) 以@ImportResource(locations = "classpath:provider.xml")取代@EnableDubbo
